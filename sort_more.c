@@ -6,7 +6,7 @@
 /*   By: slasfar <slasfar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 15:24:45 by slasfar           #+#    #+#             */
-/*   Updated: 2025/01/07 12:57:56 by slasfar          ###   ########.fr       */
+/*   Updated: 2025/01/09 16:39:21 by slasfar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,25 +48,22 @@ static void	push_untill_three_small(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
 	int	size;
+	int init_size;
 	int	count;
 
 	(1) && (size = ft_lstsize(*stack_a), count = 0, i = 0);
-	while (i < size && count < size / 2)
+	init_size = size;
+	while (i < init_size)
 	{
 		if ((*stack_a)->rank > size / 2)
 			ra(stack_a);
 		else
-		{
 			pb(stack_a, stack_b);
-			count++;
-		}
+		size = ft_lstsize(*stack_a);
 		i++;
 	}
-	while (size - count > 3)
-	{
+	while (ft_lstsize(*stack_a) > 3)
 		pb(stack_a, stack_b);
-		count++;
-	}
 }
 
 static void	push_untill_three_large(t_list **stack_a, t_list **stack_b,
