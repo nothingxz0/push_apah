@@ -6,7 +6,7 @@
 /*   By: slasfar <slasfar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 11:46:45 by slasfar           #+#    #+#             */
-/*   Updated: 2025/01/04 18:50:17 by slasfar          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:35:53 by slasfar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	do_inst(t_list **stack_a, t_list **stack_b)
 	}
 	if (flag == 0)
 		handle_error(stack_a, stack_b);
-	if (is_sorted(*stack_a))
+	if (is_sorted(*stack_a) && !(*stack_b))
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
